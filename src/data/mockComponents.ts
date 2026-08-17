@@ -67,7 +67,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'cpu',
     brand: 'AMD',
     price: 18490,
-    image: 'https://images.unsplash.com/photo-1587202372644-c2a51d13ba58?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 65,
     specs: {
@@ -131,7 +131,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'cpu',
     brand: 'AMD',
     price: 36990,
-    image: 'https://images.unsplash.com/photo-1587202372644-c2a51d13ba58?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'high',
     wattage: 120,
     specs: {
@@ -195,7 +195,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'cooler',
     brand: 'Thermalright',
     price: 3690,
-    image: 'https://images.unsplash.com/photo-1626244670081-3c5b8b939f75?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 5,
     specs: {
@@ -209,7 +209,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'cooler',
     brand: 'DeepCool',
     price: 5490,
-    image: 'https://images.unsplash.com/photo-1631557022067-160a22a36b30?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'mid',
     wattage: 12,
     specs: {
@@ -237,7 +237,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'cooler',
     brand: 'Corsair',
     price: 18990,
-    image: 'https://images.unsplash.com/photo-1626244670081-3c5b8b939f75?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'high',
     wattage: 15,
     specs: {
@@ -251,7 +251,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'cooler',
     brand: 'NZXT',
     price: 24990,
-    image: 'https://images.unsplash.com/photo-1631557022067-160a22a36b30?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'enthusiast',
     wattage: 15,
     specs: {
@@ -299,7 +299,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'motherboard',
     brand: 'MSI',
     price: 14490,
-    image: 'https://images.unsplash.com/photo-1591405351990-4726e331bc14?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 35,
     specs: {
@@ -347,7 +347,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'motherboard',
     brand: 'ASUS',
     price: 26990,
-    image: 'https://images.unsplash.com/photo-1591405351990-4726e331bc14?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'high',
     wattage: 35,
     specs: {
@@ -413,7 +413,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'ram',
     brand: 'Corsair',
     price: 3790,
-    image: 'https://images.unsplash.com/photo-1541029071797-cb8d47f10fd1?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 8,
     specs: {
@@ -461,7 +461,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'ram',
     brand: 'G.Skill',
     price: 12490,
-    image: 'https://images.unsplash.com/photo-1541029071797-cb8d47f10fd1?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'high',
     wattage: 10,
     specs: {
@@ -510,7 +510,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'gpu',
     brand: 'NVIDIA',
     price: 24990,
-    image: 'https://images.unsplash.com/photo-1591405351990-4726e331bc14?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 170,
     specs: {
@@ -555,7 +555,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'gpu',
     brand: 'NVIDIA',
     price: 37990,
-    image: 'https://images.unsplash.com/photo-1591405351990-4726e331bc14?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'mid',
     wattage: 160,
     specs: {
@@ -600,7 +600,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'gpu',
     brand: 'NVIDIA',
     price: 78990,
-    image: 'https://images.unsplash.com/photo-1591405351990-4726e331bc14?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'high',
     wattage: 285,
     specs: {
@@ -645,7 +645,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'gpu',
     brand: 'NVIDIA',
     price: 184990,
-    image: 'https://images.unsplash.com/photo-1591405351990-4726e331bc14?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'enthusiast',
     wattage: 450,
     specs: {
@@ -678,7 +678,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'storage',
     brand: 'Crucial',
     price: 5890,
-    image: 'https://images.unsplash.com/photo-1544727210-9b0d1bcce34c?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 5,
     specs: {
@@ -694,7 +694,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'storage',
     brand: 'Western Digital',
     price: 6490,
-    image: 'https://images.unsplash.com/photo-1587202372644-c2a51d13ba58?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'mid',
     wattage: 5,
     specs: {
@@ -726,7 +726,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'storage',
     brand: 'Samsung',
     price: 16990,
-    image: 'https://images.unsplash.com/photo-1544727210-9b0d1bcce34c?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'high',
     wattage: 7,
     specs: {
@@ -744,7 +744,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'psu',
     brand: 'Ant Esports',
     price: 2290,
-    image: 'https://images.unsplash.com/photo-1612815154558-28bb0f15cc85?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 500,
     specs: {
@@ -760,7 +760,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'psu',
     brand: 'Cooler Master',
     price: 4990,
-    image: 'https://images.unsplash.com/photo-1631557022067-160a22a36b30?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 650,
     specs: {
@@ -792,7 +792,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'psu',
     brand: 'SeaSonic',
     price: 12990,
-    image: 'https://images.unsplash.com/photo-1612815154558-28bb0f15cc85?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'high',
     wattage: 850,
     specs: {
@@ -808,7 +808,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'psu',
     brand: 'Corsair',
     price: 18990,
-    image: 'https://images.unsplash.com/photo-1631557022067-160a22a36b30?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'enthusiast',
     wattage: 1000,
     specs: {
@@ -840,7 +840,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'case',
     brand: 'Montech',
     price: 4790,
-    image: 'https://images.unsplash.com/photo-1555617112-b1315b70d7ee?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'budget',
     wattage: 0,
     specs: {
@@ -882,7 +882,7 @@ export const MOCK_COMPONENTS: HardwareComponent[] = [
     category: 'case',
     brand: 'Lian Li',
     price: 15990,
-    image: 'https://images.unsplash.com/photo-1555617112-b1315b70d7ee?w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
     tier: 'high',
     wattage: 0,
     specs: {

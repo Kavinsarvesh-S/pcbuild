@@ -1,0 +1,82 @@
+/* 3D Pop-out Character Card Animation */
+.character-card {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0;
+  perspective: 2500px;
+  margin: 0;
+  border-radius: 1.5rem;
+  transform-style: preserve-3d;
+}
+
+.character-card::before,
+.character-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  transition: transform 0.5s ease-out;
+}
+
+.character-card::before {
+  pointer-events: none;
+  opacity: 0.15;
+  filter: blur(15px);
+  transform: translateY(10%) scale(0.9);
+}
+
+.character-card::after {
+  z-index: 1;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.character-card img {
+  width: 200%;
+  height: 200%;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: bottom center;
+}
+
+.character-card:hover::before {
+  transform: translateY(10%) scale(0.95);
+  opacity: 0.3;
+}
+
+.character-card:hover::after {
+  transform: rotateX(15deg) rotateY(-5deg);
+}
+
+.character-card:hover img {
+  transform: scale(1.05) translateY(-5%) translateZ(50px);
+}
+
+.character-card-caption {
+  position: absolute;
+  bottom: -20px;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.character-card:hover .character-card-caption {
+  opacity: 1;
+  transform: translateY(0);
+}

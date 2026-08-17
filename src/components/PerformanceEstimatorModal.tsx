@@ -59,7 +59,7 @@ export const PerformanceEstimatorModal: React.FC<PerformanceEstimatorModalProps>
       genre: 'Battle Royale',
       baseFps: 240,
       icon: '🪖',
-      color: 'from-emerald-500 to-teal-500',
+      color: 'from-[#DAEBF2]0 to-teal-500',
     },
     {
       name: 'Fortnite (Unreal Engine 5)',
@@ -82,57 +82,57 @@ export const PerformanceEstimatorModal: React.FC<PerformanceEstimatorModalProps>
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-[100] overflow-y-auto flex items-center justify-center p-4">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-white/10 backdrop-blur-sm"
+          className="fixed inset-0 bg-slate-900/30 backdrop-blur-sm"
         />
 
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
-          className="relative w-full max-w-3xl glass-layer border border-slate-200 rounded-2xl shadow-2xl overflow-hidden z-10 my-8 text-white"
+          className="relative w-full max-w-3xl bg-transparent/95 border border-[#94BDCF] rounded-2xl shadow-2xl overflow-hidden z-10 my-8 text-slate-800"
         >
           {/* Header */}
-          <div className="p-5 glass-layer border-b border-slate-200 flex items-center justify-between">
+          <div className="p-5 bg-white/40 border-b border-[#94BDCF]/60 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600">
+              <div className="p-2.5 rounded-xl bg-[#80CCE3]/30 border border-[#80CCE3] text-slate-900">
                 <Gamepad2 className="w-6 h-6" />
               </div>
               <div>
-                <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
                   Performance & FPS Estimator Matrix
                 </h2>
-                <p className="text-xs text-white/70">Real-time benchmark calculations powered by CPU & GPU pairing</p>
+                <p className="text-xs text-slate-600">Real-time benchmark calculations powered by CPU & GPU pairing</p>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-white/70 hover:text-white transition hover-gemini-gradient"
+              className="p-2 rounded-xl bg-white/60 hover:bg-white text-slate-600 hover:text-slate-900 transition border border-[#94BDCF]/60"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
+          <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto bg-white/30">
             {/* Resolution Selector Tabs */}
-            <div className="flex items-center justify-between p-2 rounded-xl bg-slate-100 border border-slate-200">
-              <span className="text-xs font-semibold text-white/80 uppercase tracking-wider pl-2 flex items-center gap-1.5">
-                <Monitor className="w-4 h-4 text-indigo-600" /> Target Resolution:
+            <div className="flex items-center justify-between p-2 rounded-xl bg-white/70 border border-[#94BDCF]/60">
+              <span className="text-xs font-semibold text-slate-700 uppercase tracking-wider pl-2 flex items-center gap-1.5">
+                <Monitor className="w-4 h-4 text-sky-700" /> Target Resolution:
               </span>
               <div className="flex items-center gap-1">
                 {(['1080p', '1440p', '4K'] as const).map((res) => (
                   <button
                     key={res}
                     onClick={() => setResolution(res)}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition hover-gemini-gradient ${
+                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
                       resolution === res
-                        ? 'bg-indigo-600 text-white shadow-sm'
-                        : 'text-white/80 hover:text-white hover:bg-slate-200'
+                        ? 'bg-[#80CCE3] text-slate-950 font-bold shadow-xs border border-sky-400'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                     }`}
                   >
                     {res}
@@ -142,17 +142,17 @@ export const PerformanceEstimatorModal: React.FC<PerformanceEstimatorModalProps>
             </div>
 
             {/* Hardware Pair Badge */}
-            <div className="p-4 rounded-xl bg-indigo-50/60 border border-indigo-200 flex items-center justify-between">
+            <div className="p-4 rounded-xl bg-white/80 border border-[#94BDCF]/60 flex items-center justify-between shadow-xs">
               <div>
-                <span className="text-[10px] text-indigo-700 uppercase tracking-wider font-bold">Active Engine Pair</span>
-                <p className="text-sm font-bold text-white mt-0.5">
+                <span className="text-[10px] text-sky-800 uppercase tracking-wider font-bold">Active Engine Pair</span>
+                <p className="text-sm font-bold text-slate-900 mt-0.5">
                   {gpu ? gpu.name : 'No GPU Selected'} + {cpu ? cpu.name : 'No CPU Selected'}
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-[10px] text-white/70 uppercase font-semibold">Workstation Score</span>
-                <p className="text-lg font-mono font-extrabold text-[#FF9E1B] flex items-center gap-1 justify-end">
-                  <Award className="w-4 h-4 text-[#FF9E1B]" /> {workstationScore}/100
+                <span className="text-[10px] text-slate-500 uppercase font-semibold">Workstation Score</span>
+                <p className="text-lg font-mono font-extrabold text-sky-800 flex items-center gap-1 justify-end">
+                  <Award className="w-4 h-4 text-sky-700" /> {workstationScore}/100
                 </p>
               </div>
             </div>
@@ -166,22 +166,22 @@ export const PerformanceEstimatorModal: React.FC<PerformanceEstimatorModalProps>
                 return (
                   <div
                     key={game.name}
-                    className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-indigo-300 transition hover-gemini-gradient space-y-3"
+                    className="p-4 rounded-xl bg-white/80 border border-[#94BDCF]/60 hover:border-[#94BDCF] transition space-y-3 shadow-xs"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="text-xl">{game.icon}</span>
                         <div>
-                          <h3 className="text-xs font-bold text-white">{game.name}</h3>
-                          <span className="text-[10px] text-white/70">{game.genre}</span>
+                          <h3 className="text-xs font-bold text-slate-900">{game.name}</h3>
+                          <span className="text-[10px] text-slate-500">{game.genre}</span>
                         </div>
                       </div>
-                      <span className="text-xs font-mono font-semibold text-white/70">{resolution}</span>
+                      <span className="text-xs font-mono font-semibold text-slate-500">{resolution}</span>
                     </div>
 
                     <div className="flex items-baseline justify-between pt-2 border-t border-slate-200">
-                      <span className="text-xs text-white/70">Estimated Framerate</span>
-                      <span className={`text-2xl font-mono font-extrabold ${isFluid ? 'text-indigo-600' : 'text-[#FF9E1B]'}`}>
+                      <span className="text-xs text-slate-600">Estimated Framerate</span>
+                      <span className={`text-2xl font-mono font-extrabold ${isFluid ? 'text-sky-800' : 'text-slate-700'}`}>
                         {calculatedFps > 0 ? `${calculatedFps} FPS` : 'Select Parts'}
                       </span>
                     </div>
@@ -199,10 +199,10 @@ export const PerformanceEstimatorModal: React.FC<PerformanceEstimatorModalProps>
             </div>
           </div>
 
-          <div className="p-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+          <div className="p-4 bg-white/40 border-t border-[#94BDCF]/60 flex justify-end">
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition hover-gemini-gradient"
+              className="px-4 py-2 rounded-xl bg-[#80CCE3] hover:bg-[#94BDCF] text-slate-950 font-bold text-xs transition border border-sky-400"
             >
               Back to Builder
             </button>

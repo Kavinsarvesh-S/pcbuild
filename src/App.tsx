@@ -14,6 +14,11 @@ import { LandingPage } from './components/LandingPage';
 import { CheckoutPage } from './components/CheckoutPage';
 import { ContactPage } from './components/ContactPage';
 import { PresetsPage } from './components/PresetsPage';
+import { AboutPage } from './components/AboutPage';
+import { AuthPage } from './components/AuthPage';
+import { GlobalNav } from './components/GlobalNav';
+import { PageLoader } from './components/PageLoader';
+import { Footer } from './components/Footer';
 import { ToastContainer } from './components/ToastContainer';
 import { CursorSpotlight } from './components/CursorSpotlight';
 import confetti from 'canvas-confetti';
@@ -33,10 +38,22 @@ const INITIAL_PARTS: SelectedParts = {
 };
 
 export const App: React.FC = () => {
-  const [view, setView] = useState<'landing' | 'builder' | 'checkout' | 'contact' | 'presets'>('landing');
+  const [isPageLoading, setIsPageLoading] = useState(false);
+  const [view, setView] = useState<'landing' | 'builder' | 'checkout' | 'contact' | 'presets' | 'about' | 'auth'>('landing');
   const [initialPresetCategory, setInitialPresetCategory] = useState<PresetBuild['category'] | null>(null);
   const [selectedParts, setSelectedParts] = useState<SelectedParts>(INITIAL_PARTS);
   const [budget, setBudget] = useState<number>(120000);
+
+  const navigate = (newView: typeof view) => {
+    if (view === newView) return;
+    setIsPageLoading(true);
+    // Fake loading delay to show skeleton and allow exit animation
+    setTimeout(() => {
+      setView(newView);
+      setTimeout(() => setIsPageLoading(false), 500); // 500ms skeleton
+    }, 250);
+  };
+
 
   const [activeDrawerCategory, setActiveDrawerCategory] = useState<ComponentCategory | null>(null);
 
@@ -115,7 +132,7 @@ export const App: React.FC = () => {
   const handleSelectPreset = (preset: PresetBuild) => {
     setSelectedParts(preset.parts);
     setBudget(preset.estimatedPrice + 200);
-    setView('builder');
+    navigate('builder');
     addToast('Preset Build Loaded', `Loaded "${preset.name}" preset build.`, 'success');
     triggerCelebrationIfComplete(preset.parts);
   };
@@ -130,54 +147,78 @@ export const App: React.FC = () => {
   const filledCount = Object.values(selectedParts).filter(Boolean).length;
 
   return (
-    <div className="min-h-screen bg-transparent">
+        <div className="min-h-screen relative overflow-x-hidden">
+      {/* Dynamic Background Orbs */}
+      <div className="fixed inset-0 z-[-2] bg-[#DAEBF2]">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#B0DEED] blur-[120px] opacity-70 animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#94BDCF] blur-[150px] opacity-60 animate-pulse" style={{ animationDuration: '10s' }} />
+        <div className="absolute top-[20%] right-[20%] w-[30%] h-[30%] rounded-full bg-[#80CCE3] blur-[100px] opacity-50 animate-pulse" style={{ animationDuration: '12s' }} />
+      </div>
       <CursorSpotlight />
       <ToastContainer toasts={toasts} onDismiss={removeToast} />
 
+      <GlobalNav onGoToBuilder={() => navigate('builder')} 
+        activeView={view}
+        onGoToHome={() => navigate('landing')}
+        onGoToPresets={() => navigate('presets')}
+        onGoToAbout={() => navigate('about')}
+        onGoToContact={() => navigate('contact')}
+        onGoToAuth={() => navigate('auth')}
+      />
+
       <AnimatePresence mode="wait">
-        {view === 'landing' && (
-          <LandingPage
+        {isPageLoading && <PageLoader key="loader" />}
+        {!isPageLoading && view === 'landing' && (
+          <LandingPage onGoToBuilder={() => navigate('builder')}
             key="landing"
-            onStartBuilding={() => setView('builder')}
-            onGoToHome={() => setView('landing')}
-            onGoToContact={() => setView('contact')}
+            
+            onGoToHome={() => navigate('landing')}
+            onGoToContact={() => navigate('contact')}
             onGoToPresets={(category) => {
               setInitialPresetCategory(category || null);
-              setView('presets');
+              navigate('presets');
             }}
           />
         )}
 
-        {view === 'presets' && (
+        {!isPageLoading && view === 'about' && (
+          <AboutPage key="about" />
+        )}
+
+        {!isPageLoading && view === 'auth' && (
+          <AuthPage key="auth" onLoginSuccess={() => navigate('builder')} />
+        )}
+
+        {!isPageLoading && view === 'presets' && (
           <PresetsPage
             key="presets"
             initialCategory={initialPresetCategory}
             onSelectPreset={handleSelectPreset}
-            onGoToHome={() => setView('landing')}
-            onGoToContact={() => setView('contact')}
+            onGoToHome={() => navigate('landing')}
+            onGoToContact={() => navigate('contact')}
           />
         )}
 
-        {view === 'checkout' && (
+        {!isPageLoading && view === 'checkout' && (
           <CheckoutPage
             key="checkout"
             selectedParts={selectedParts}
             report={compatibilityReport}
             budget={budget}
-            onBackToBuilder={() => setView('builder')}
-            onGoToHome={() => setView('landing')}
-            onGoToContact={() => setView('contact')}
+            
+            onGoToHome={() => navigate('landing')}
+            onGoToContact={() => navigate('contact')}
           />
         )}
 
-        {view === 'builder' && (
+        {!isPageLoading && view === 'builder' && (
           <motion.div
             key="builder"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
-            className="min-h-screen text-white flex flex-col pb-24"
+            className="min-h-screen bg-transparent text-slate-800 flex flex-col pb-24"
           >
             {/* Top Header Navigation */}
             <Navbar
@@ -187,40 +228,40 @@ export const App: React.FC = () => {
               onResetBuild={handleResetBuild}
               onOpenShareModal={() => setIsShareModalOpen(true)}
               onOpenPerformanceModal={() => setIsPerformanceModalOpen(true)}
-              onGoToHome={() => setView('landing')}
-              onGoToCheckout={() => setView('checkout')}
+              onGoToHome={() => navigate('landing')}
+              onGoToCheckout={() => navigate('checkout')}
             />
 
             {/* Main Content Dashboard */}
             <main className="max-w-7xl mx-auto px-4 lg:px-8 py-6 w-full flex-1 space-y-6">
               {/* Top Hero Stats Banner */}
-              <div className="glass-layer rounded-2xl p-5 border border-white/40 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
+              <div className="glass-layer rounded-2xl p-5 border border-[#B0DEED] flex flex-col md:flex-row items-center justify-between gap-4 shadow-md">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="p-1.5 rounded-lg bg-rose-500/20/60 text-white border border-rose-500/50">
-                      <Cpu className="w-4 h-4 text-[#1E293B]" />
+                    <span className="p-1.5 rounded-lg bg-[#80CCE3]/30 text-slate-900 border border-[#80CCE3]/60">
+                      <Cpu className="w-4 h-4 text-slate-800" />
                     </span>
-                    <h2 className="text-lg font-brand font-bold text-white tracking-wider">EDITH</h2>
+                    <h2 className="text-lg font-brand font-bold text-slate-900 tracking-wider">EDITH</h2>
                   </div>
-                  <p className="text-xs text-white/80 mt-1">
+                  <p className="text-xs text-slate-600 mt-1">
                     Configure components with real-time validation across sockets, memory standards, and power headroom.
                   </p>
                 </div>
 
                 <div className="flex items-center gap-3 sm:gap-6">
-                  <div className="text-center px-3.5 py-2 rounded-xl glass-layer border border-white/30 shadow-xs">
-                    <span className="text-[10px] text-white/80 uppercase font-semibold">Components</span>
-                    <p className="text-base font-mono font-bold text-white">{filledCount} / 8</p>
+                  <div className="text-center px-3.5 py-2 rounded-xl glass-layer border border-[#B0DEED] shadow-xs">
+                    <span className="text-[10px] text-slate-500 uppercase font-semibold">Components</span>
+                    <p className="text-base font-mono font-bold text-slate-900">{filledCount} / 8</p>
                   </div>
 
-                  <div className="text-center px-3.5 py-2 rounded-xl glass-layer border border-white/30 shadow-xs">
-                    <span className="text-[10px] text-white/80 uppercase font-semibold">Est. Power Draw</span>
-                    <p className="text-base font-mono font-bold text-[#FF9E1B]">{compatibilityReport.totalWattage}W</p>
+                  <div className="text-center px-3.5 py-2 rounded-xl glass-layer border border-[#B0DEED] shadow-xs">
+                    <span className="text-[10px] text-slate-500 uppercase font-semibold">Est. Power Draw</span>
+                    <p className="text-base font-mono font-bold text-sky-700">{compatibilityReport.totalWattage}W</p>
                   </div>
 
-                  <div className="text-center px-3.5 py-2 rounded-xl glass-layer border border-white/30 shadow-xs">
-                    <span className="text-[10px] text-white/80 uppercase font-semibold">Status</span>
-                    <p className={`text-xs font-bold ${compatibilityReport.isCompatible ? 'text-[#FF9E1B]' : 'text-rose-400'}`}>
+                  <div className="text-center px-3.5 py-2 rounded-xl glass-layer border border-[#B0DEED] shadow-xs">
+                    <span className="text-[10px] text-slate-500 uppercase font-semibold">Status</span>
+                    <p className={`text-xs font-bold ${compatibilityReport.isCompatible ? 'text-emerald-700' : 'text-amber-700'}`}>
                       {compatibilityReport.isCompatible ? '✅ Compatible' : '⚠️ Conflict'}
                     </p>
                   </div>
@@ -236,10 +277,10 @@ export const App: React.FC = () => {
               {/* Visual Component Slots Grid (4x2 layout) */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-base font-bold text-white flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-rose-400" /> Component Slots
+                  <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                    <Layers className="w-4 h-4 text-sky-700" /> Component Slots
                   </h2>
-                  <span className="text-xs text-white/70">Click any card to select or swap hardware</span>
+                  <span className="text-xs text-slate-500">Click any card to select or swap hardware</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -263,13 +304,19 @@ export const App: React.FC = () => {
               </div>
             </main>
 
+            {/* Footer */}
+            <Footer
+              onGoToHome={() => navigate('landing')}
+              onGoToContact={() => navigate('contact')}
+            />
+
             {/* Fixed Bottom Summary Bar */}
             <BottomSummaryBar
               report={compatibilityReport}
               budget={budget}
               onOpenReportModal={() => setIsReportModalOpen(true)}
               onOpenPerformanceModal={() => setIsPerformanceModalOpen(true)}
-              onProceedToCheckout={() => setView('checkout')}
+              onProceedToCheckout={() => navigate('checkout')}
             />
 
             {/* Component Drawer */}
@@ -319,12 +366,12 @@ export const App: React.FC = () => {
           </motion.div>
         )}
 
-        {view === 'contact' && (
+        {!isPageLoading && view === 'contact' && (
           <ContactPage
             key="contact"
-            onGoToHome={() => setView('landing')}
-            onGoToContact={() => setView('contact')}
-            onStartBuilding={() => setView('builder')}
+            onGoToHome={() => navigate('landing')}
+            onGoToContact={() => navigate('contact')}
+            
           />
         )}
       </AnimatePresence>

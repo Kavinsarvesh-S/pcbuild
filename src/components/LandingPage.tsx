@@ -159,7 +159,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-24 text-left">
           {/* Feature 1 */}
-          <motion.div whileHover={{ y: -8, scale: 1.02 }} className="glass-panel p-6 rounded-3xl border border-[#B0DEED] bg-[#B0DEED]/30 shadow-md hover:shadow-2xl hover:border-[#80CCE3] transition-all duration-300 space-y-3 cursor-default">
+          <motion.div whileHover={{ y: -8, scale: 1.02 }} className="bg-white/20 backdrop-blur-2xl p-6 rounded-3xl border border-[#B0DEED] bg-[#B0DEED]/30 shadow-md hover:shadow-2xl hover:border-[#80CCE3] transition-all duration-300 space-y-3 cursor-default">
             <div className="p-3 w-12 h-12 rounded-2xl bg-[#B0DEED]/60 text-slate-900 flex items-center justify-center border border-[#80CCE3] shadow-sm">
               <ShieldCheck className="w-6 h-6 text-indigo-700" />
             </div>
@@ -170,7 +170,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           </motion.div>
 
           {/* Feature 2 */}
-          <motion.div whileHover={{ y: -8, scale: 1.02 }} className="glass-panel p-6 rounded-3xl border border-[#94BDCF] bg-[#C2DAE6]/70 shadow-md hover:shadow-2xl hover:border-[#80CCE3] transition-all duration-300 space-y-3 cursor-default">
+          <motion.div whileHover={{ y: -8, scale: 1.02 }} className="bg-white/20 backdrop-blur-2xl p-6 rounded-3xl border border-[#94BDCF] bg-[#C2DAE6]/70 shadow-md hover:shadow-2xl hover:border-[#80CCE3] transition-all duration-300 space-y-3 cursor-default">
             <div className="p-3 w-12 h-12 rounded-2xl bg-[#94BDCF] text-slate-800 flex items-center justify-center border border-[#94BDCF] shadow-sm">
               <Zap className="w-6 h-6 text-amber-700" />
             </div>
@@ -181,7 +181,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           </motion.div>
 
           {/* Feature 3 */}
-          <motion.div whileHover={{ y: -8, scale: 1.02 }} className="glass-panel p-6 rounded-3xl border border-[#94BDCF] bg-[#C2DAE6]/60 shadow-md hover:shadow-2xl hover:border-[#80CCE3] transition-all duration-300 space-y-3 cursor-default">
+          <motion.div whileHover={{ y: -8, scale: 1.02 }} className="bg-white/20 backdrop-blur-2xl p-6 rounded-3xl border border-[#94BDCF] bg-[#C2DAE6]/60 shadow-md hover:shadow-2xl hover:border-[#80CCE3] transition-all duration-300 space-y-3 cursor-default">
             <div className="p-3 w-12 h-12 rounded-2xl bg-[#94BDCF] text-slate-800 flex items-center justify-center border border-[#94BDCF] shadow-sm">
               <Gamepad2 className="w-6 h-6 text-rose-700" />
             </div>
@@ -192,7 +192,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           </motion.div>
 
           {/* Feature 4 */}
-          <motion.div whileHover={{ y: -8, scale: 1.02 }} className="glass-panel p-6 rounded-3xl border border-[#B0DEED] bg-[#B0DEED]/20 shadow-md hover:shadow-2xl hover:border-[#80CCE3] transition-all duration-300 space-y-3 cursor-default">
+          <motion.div whileHover={{ y: -8, scale: 1.02 }} className="bg-white/20 backdrop-blur-2xl p-6 rounded-3xl border border-[#B0DEED] bg-[#B0DEED]/20 shadow-md hover:shadow-2xl hover:border-[#80CCE3] transition-all duration-300 space-y-3 cursor-default">
             <div className="p-3 w-12 h-12 rounded-2xl bg-[#B0DEED]/60 text-slate-900 flex items-center justify-center border border-[#B0DEED] shadow-sm">
               <Box className="w-6 h-6 text-purple-700" />
             </div>

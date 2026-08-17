@@ -85,7 +85,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 lg:px-8 py-8 w-full flex-1 space-y-8">
         {/* Checkout Header Title Banner */}
-        <div className="glass-panel rounded-2xl p-6 border border-[#94BDCF]/40 glass-layer shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="bg-white/20 backdrop-blur-2xl rounded-2xl p-6 border border-[#94BDCF]/40 glass-layer shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
             <h2 className="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
               <Truck className="w-5 h-5 text-[#80CCE3]" /> Final Rig Order & Shipping
@@ -116,7 +116,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
           {/* Left Column: Shipping & Payment Form */}
           <div className="lg:col-span-7 space-y-6">
             {/* Step 1: Professional Assembly Toggle */}
-            <div className="glass-panel rounded-2xl p-6 border border-[#94BDCF]/40 glass-layer shadow-sm space-y-4">
+            <div className="bg-white/20 backdrop-blur-2xl rounded-2xl p-6 border border-[#94BDCF]/40 glass-layer shadow-sm space-y-4">
               <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
                 <Wrench className="w-4 h-4 text-[#80CCE3]" /> Custom Rig Assembly Option
               </h3>
@@ -165,7 +165,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
             </div>
 
             {/* Step 2: Delivery & Shipping Address Form */}
-            <form onSubmit={handlePlaceOrder} className="glass-panel rounded-2xl p-6 border border-[#94BDCF]/40 glass-layer shadow-sm space-y-5">
+            <form onSubmit={handlePlaceOrder} className="bg-white/20 backdrop-blur-2xl rounded-2xl p-6 border border-[#94BDCF]/40 glass-layer shadow-sm space-y-5">
               <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
                 <Truck className="w-4 h-4 text-[#80CCE3]" /> Delivery & Shipping Address
               </h3>
@@ -343,7 +343,7 @@ export const CheckoutPage: React.FC<CheckoutPageProps> = ({
 
           {/* Right Column: Hardware Itemized Order Summary */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="glass-panel rounded-2xl p-6 border border-[#94BDCF]/40 glass-layer shadow-sm space-y-5">
+            <div className="bg-white/20 backdrop-blur-2xl rounded-2xl p-6 border border-[#94BDCF]/40 glass-layer shadow-sm space-y-5">
               <h3 className="text-base font-bold text-slate-900 flex items-center gap-2 border-b border-[#94BDCF]/40 pb-3">
                 <Cpu className="w-4 h-4 text-[#80CCE3]" /> Hardware Configuration Summary
               </h3>

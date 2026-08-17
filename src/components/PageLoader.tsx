@@ -23,7 +23,7 @@ export const PageLoader: React.FC = () => {
       {/* Grid Skeleton */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div key={i} className="glass-panel p-6 rounded-3xl border border-[#94BDCF]/20 h-64 flex flex-col">
+          <div key={i} className="bg-white/20 backdrop-blur-2xl p-6 rounded-3xl border border-[#94BDCF]/20 h-64 flex flex-col">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-white/20 animate-pulse shrink-0" />
               <div className="space-y-2 flex-1">
@@ -40,7 +40,7 @@ export const PageLoader: React.FC = () => {
 
       {/* Centered Loading indicator */}
       <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-50">
-        <div className="p-4 rounded-2xl glass-panel shadow-2xl flex flex-col items-center gap-3">
+        <div className="p-4 rounded-2xl bg-white/20 backdrop-blur-2xl shadow-2xl flex flex-col items-center gap-3">
           <Cpu className="w-8 h-8 text-[#80CCE3] animate-bounce" />
           <div className="flex gap-1">
             <div className="w-2 h-2 rounded-full bg-[#94BDCF] animate-ping" style={{ animationDelay: '0ms' }} />

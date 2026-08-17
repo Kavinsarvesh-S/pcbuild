@@ -27,13 +27,13 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
 
         {/* Mission & Values */}
         <section className="grid md:grid-cols-2 gap-12">
-          <div className="glass-panel p-8 rounded-3xl border border-[#B0DEED] shadow-sm bg-white/40">
+          <div className="bg-white/20 backdrop-blur-2xl p-8 rounded-3xl border border-[#B0DEED] shadow-sm bg-white/40">
             <h3 className="text-2xl font-bold mb-4 text-slate-900">Mission</h3>
             <p className="text-slate-600">
               To empower creators, gamers, and engineers by providing an intuitive, beautiful, and reliable platform for designing high-performance custom computers.
             </p>
           </div>
-          <div className="glass-panel p-8 rounded-3xl border border-[#B0DEED] shadow-sm bg-white/40">
+          <div className="bg-white/20 backdrop-blur-2xl p-8 rounded-3xl border border-[#B0DEED] shadow-sm bg-white/40">
             <h3 className="text-2xl font-bold mb-4 text-slate-900">Values</h3>
             <ul className="list-disc list-inside text-slate-600 space-y-2">
               <li>0 Compromise on Quality</li>

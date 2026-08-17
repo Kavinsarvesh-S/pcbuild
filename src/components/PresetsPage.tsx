@@ -97,7 +97,7 @@ export const PresetsPage: React.FC<PresetsPageProps> = ({
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   onClick={() => onSelectPreset(preset)}
-                  className="glass-panel cursor-pointer rounded-3xl p-5 border border-[#94BDCF]/40 glass-layer shadow-md flex flex-col h-full bg-white/80 hover:border-[#94BDCF]/50 hover:shadow-xl transition-all"
+                  className="bg-white/20 backdrop-blur-2xl cursor-pointer rounded-3xl p-5 border border-[#94BDCF]/40 glass-layer shadow-md flex flex-col h-full bg-white/80 hover:border-[#94BDCF]/50 hover:shadow-xl transition-all"
                 >
                   {/* Top Text */}
                   <div className="mb-4">

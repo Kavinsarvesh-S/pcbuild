@@ -106,14 +106,14 @@ export const ComponentDrawer: React.FC<ComponentDrawerProps> = ({
 
         {/* Centered Modal Panel */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ scale: 0.95, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.95, opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="relative w-full max-w-3xl max-h-[90vh] glass-panel bg-transparent/95 rounded-3xl border border-[#94BDCF] shadow-2xl flex flex-col z-10 text-slate-800 overflow-hidden"
+          className="relative w-full max-w-3xl max-h-[90vh] bg-white/20 backdrop-blur-2xl rounded-3xl border border-[#94BDCF]/50 shadow-2xl flex flex-col z-10 text-slate-800 overflow-hidden"
         >
           {/* Header */}
-          <div className="p-4 sm:p-6 border-b border-[#94BDCF]/60 bg-white/40 flex items-center justify-between">
+          <div className="p-4 sm:p-6 border-b border-[#94BDCF]/60 bg-white/10 flex items-center justify-between">
             <div>
               <div className="flex items-center gap-2">
                 <span className="p-2 rounded-lg bg-[#80CCE3]/30 text-slate-800 border border-[#80CCE3]">
@@ -134,7 +134,7 @@ export const ComponentDrawer: React.FC<ComponentDrawerProps> = ({
           </div>
 
           {/* Filter Bar & Controls */}
-          <div className="p-4 bg-white/20 border-b border-[#94BDCF]/60 space-y-3">
+          <div className="p-4 bg-white/5 border-b border-[#94BDCF]/60 space-y-3">
             {/* Search & Hide Incompatible Toggle */}
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <div className="relative flex-1 w-full">
@@ -205,7 +205,7 @@ export const ComponentDrawer: React.FC<ComponentDrawerProps> = ({
           </div>
 
           {/* Component List */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-white/30">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-transparent">
             {filteredComponents.length === 0 ? (
               <div className="py-12 text-center text-slate-500">
                 <SlidersHorizontal className="w-8 h-8 mx-auto mb-2 text-slate-400" />

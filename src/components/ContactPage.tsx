@@ -35,7 +35,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onGoToHome, onGoToCont
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Info Column */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="glass-panel p-6 rounded-2xl border border-[#94BDCF]/40 glass-layer shadow-sm flex items-start gap-4">
+            <div className="bg-white/20 backdrop-blur-2xl p-6 rounded-2xl border border-[#94BDCF]/40 glass-layer shadow-sm flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-[#94BDCF]/20 flex items-center justify-center border border-[#94BDCF]/30 shrink-0">
                 <MapPin className="w-5 h-5 text-[#80CCE3]" />
               </div>
@@ -45,7 +45,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onGoToHome, onGoToCont
               </div>
             </div>
 
-            <div className="glass-panel p-6 rounded-2xl border border-[#94BDCF]/40 glass-layer shadow-sm flex items-start gap-4">
+            <div className="bg-white/20 backdrop-blur-2xl p-6 rounded-2xl border border-[#94BDCF]/40 glass-layer shadow-sm flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-[#94BDCF]/20 flex items-center justify-center border border-[#94BDCF]/30 shrink-0">
                 <Phone className="w-5 h-5 text-[#80CCE3]" />
               </div>
@@ -55,7 +55,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onGoToHome, onGoToCont
               </div>
             </div>
 
-            <div className="glass-panel p-6 rounded-2xl border border-[#94BDCF]/40 glass-layer shadow-sm flex items-start gap-4">
+            <div className="bg-white/20 backdrop-blur-2xl p-6 rounded-2xl border border-[#94BDCF]/40 glass-layer shadow-sm flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-[#94BDCF]/20 flex items-center justify-center border border-[#94BDCF]/30 shrink-0">
                 <Mail className="w-5 h-5 text-[#80CCE3]" />
               </div>
@@ -65,7 +65,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onGoToHome, onGoToCont
               </div>
             </div>
             
-            <div className="glass-panel p-6 rounded-2xl border border-[#94BDCF]/40 glass-layer shadow-sm flex items-start gap-4">
+            <div className="bg-white/20 backdrop-blur-2xl p-6 rounded-2xl border border-[#94BDCF]/40 glass-layer shadow-sm flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-[#94BDCF]/20 flex items-center justify-center border border-[#94BDCF]/30 shrink-0">
                 <Clock className="w-5 h-5 text-[#80CCE3]" />
               </div>
@@ -78,7 +78,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onGoToHome, onGoToCont
 
           {/* Contact Form Column */}
           <div className="lg:col-span-2">
-            <div className="glass-panel p-6 md:p-8 rounded-3xl border border-[#94BDCF]/40 glass-layer shadow-md h-full">
+            <div className="bg-white/20 backdrop-blur-2xl p-6 md:p-8 rounded-3xl border border-[#94BDCF]/40 glass-layer shadow-md h-full">
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h2>
               <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

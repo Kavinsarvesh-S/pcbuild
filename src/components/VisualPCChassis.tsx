@@ -16,7 +16,7 @@ export const VisualPCChassis: React.FC<VisualPCChassisProps> = ({
   const isComplete = installedCount === 8;
 
   return (
-    <div className="relative glass-panel rounded-2xl p-4 sm:p-6 overflow-hidden border border-[#94BDCF]/60 shadow-md glass-layer">
+    <div className="relative bg-white/20 backdrop-blur-2xl rounded-2xl p-4 sm:p-6 overflow-hidden border border-[#94BDCF]/60 shadow-md glass-layer">
       {/* Header bar */}
       <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#94BDCF]/50">
         <div>

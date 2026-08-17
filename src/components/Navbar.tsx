@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </motion.button>
 
             {showPresetsMenu && (
-              <div className="absolute right-0 sm:left-0 mt-2 w-72 sm:w-80 bg-white/30 border border-[#B0DEED] rounded-2xl shadow-2xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150 backdrop-blur-xl">
+              <div className="absolute right-0 sm:left-0 mt-2 w-72 sm:w-80 bg-white/40 border border-[#B0DEED]/80 rounded-2xl shadow-2xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150 backdrop-blur-3xl">
                 <div className="px-3 py-2 border-b border-[#B0DEED]/60">
                   <p className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                     Curated Template Rigs

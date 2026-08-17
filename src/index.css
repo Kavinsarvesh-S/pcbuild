@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --font-brand: 'Syncopate', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+}
+
+.font-brand {
+  font-family: 'Syncopate', sans-serif !important;
+  letter-spacing: 0.04em;
+}
+
+:root {
+  --color-cream-light: #C2DAE6;
+  --color-cream-peach: #94BDCF;
+  --color-blue-soft: #B0DEED;
+  --color-blue-sky: #80CCE3;
+  --color-blush-light: #DAEBF2;
+  --color-rose-soft: #C2DAE6;
+  --color-rose-dusty: #94BDCF;
+  --color-lavender: #B0DEED;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@layer base {
+  body {
+    @apply text-slate-800 font-sans antialiased selection:bg-[#d9d7fb]/40 selection:text-slate-900;
+    /* Light Gemini Inspired Canvas with Animated Flow Template */
+    background-color: #f0f4ff;
+    background-image: linear-gradient(135deg, #f0f4ff 0%, #d9d7fb 25%, #f2d0ed 50%, #ffe3d3 75%, #f0f4ff 100%);
+    background-size: 300% 300%;
+    animation: gradient-flow 15s ease infinite;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+.glass-layer {
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 32px 0 rgba(140, 192, 235, 0.2) !important;
+}
+
+/* Custom Minimal Pastel Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #DAEBF2;
+}
+::-webkit-scrollbar-thumb {
+  background: #B0DEED;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #80CCE3;
+}
+
+/* Pastel Glassmorphism Panels with Animation */
+@keyframes glass-pulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px -5px rgba(140, 192, 235, 0.2), 0 4px 12px -2px rgba(197, 179, 211, 0.15);
+    backdrop-filter: blur(16px);
+  }
+  50% {
+    box-shadow: 0 15px 40px -5px rgba(140, 192, 235, 0.4), 0 8px 20px -2px rgba(197, 179, 211, 0.3);
+    backdrop-filter: blur(20px);
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #B0DEED;
+  box-shadow: 0 10px 30px -5px rgba(140, 192, 235, 0.2), 0 4px 12px -2px rgba(197, 179, 211, 0.15);
+  animation: glass-pulse 6s infinite ease-in-out;
+}
+
+.glass-panel-lavender {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid #B0DEED;
+  box-shadow: 0 8px 25px rgba(197, 179, 211, 0.25);
+  animation: glass-pulse 6s infinite ease-in-out;
+}
+
+.glass-panel-cream {
+  background: rgba(255, 249, 210, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid #94BDCF;
+  box-shadow: 0 8px 25px rgba(255, 235, 204, 0.3);
+  animation: glass-pulse 6s infinite ease-in-out;
+}
+
+/* Pastel Glowing Border Utilities */
+.glow-border-sky {
+  border-color: #80CCE3;
+  box-shadow: 0 0 16px rgba(140, 192, 235, 0.35);
+}
+
+.glow-border-lavender {
+  border-color: #B0DEED;
+  box-shadow: 0 0 16px rgba(197, 179, 211, 0.35);
+}
+
+.glow-border-rose {
+  border-color: #94BDCF;
+  box-shadow: 0 0 16px rgba(245, 203, 203, 0.35);
+}
+
+.glow-border-cream {
+  border-color: #94BDCF;
+  box-shadow: 0 0 16px rgba(255, 235, 204, 0.4);
+}
+
+/* Custom Text Gradients */
+.text-gradient-pastel {
+  background: linear-gradient(135deg, #2C3E50 0%, #5B6B7C 40%, #80CCE3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-lavender {
+  background: linear-gradient(135deg, #6B4984 0%, #B0DEED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
